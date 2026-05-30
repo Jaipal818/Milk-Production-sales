@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dairy Pro — Milk Management System</title>
+
+  <!-- Tabler Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     LOGIN PAGE
+══════════════════════════════════════════ -->
+<div id="page-login">
+  <div class="login-wrap">
+
+    <div class="login-logo">
+      <div class="logo-icon"><i class="ti ti-droplet-filled-2"></i></div>
+      <h1>Dairy Pro</h1>
+      <p>Milk Collection &amp; Sales Management</p>
+    </div>
+
+    <div class="login-card">
+      <h2>Sign In</h2>
+
+      <!-- Role Tabs -->
+      <div class="login-tabs">
+        <button class="login-tab" data-role="admin"    onclick="switchLoginTab('admin')">Admin</button>
+        <button class="login-tab" data-role="middle"   onclick="switchLoginTab('middle')">Middle Person</button>
+        <button class="login-tab" data-role="seller"   onclick="switchLoginTab('seller')">Seller</button>
+        <button class="login-tab" data-role="customer" onclick="switchLoginTab('customer')">Customer</button>
+      </div>
+
+      <div id="login-error" class="login-error hidden">
+        Invalid username or password. Please try again.
+      </div>
+
+      <form id="login-form" autocomplete="off">
+        <div class="form-group mb-1">
+          <label>Name / Username</label>
+          <input type="text" id="login-name" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group mb-1">
+          <label>Password</label>
+          <input type="password" id="login-pass" placeholder="Enter your password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" style="margin-top:14px">
+          <i class="ti ti-login"></i> Sign In
+        </button>
+      </form>
+
+      <!-- Demo accounts -->
+      <div class="demo-accounts">
+        <h4> accounts — click to fill:</h4>
+        <div id="demo-list"></div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /page-login -->
+
+
+<!-- ══════════════════════════════════════════
+     MAIN APP
+══════════════════════════════════════════ -->
+<div id="page-app">
+  <div class="app-shell">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <i class="ti ti-droplet-filled-2"></i>
+        <span>Dairy Pro</span>
+      </div>
+      <div class="sidebar-user" id="sidebar-user-block"></div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+      <div class="sidebar-footer">
+        <button class="btn btn-secondary btn-full" onclick="doLogout()">
+          <i class="ti ti-logout"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- ── Topbar ── -->
+    <header class="topbar">
+      <div class="flex-center gap-1">
+        <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+        <span class="topbar-title" id="topbar-title">Dashboard</span>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-user">
+          <div class="avatar" id="tb-avatar">?</div>
+          <div>
+            <div class="tu-name"  id="tb-user-name">—</div>
+            <div class="tu-role"  id="tb-user-role">—</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Content ── -->
+    <main class="content-area" id="content-area">
+      <!-- Pages rendered here by JS -->
+    </main>
+
+  </div>
+</div><!-- /page-app -->
+
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+
+<!-- ── Scripts ── -->
+<script src="js/db.js"></script>
+<script src="js/app.js"></script>
+<script src="js/pages.js"></script>
+
+</body>
+</html>
