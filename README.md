@@ -35,7 +35,7 @@ dairy-pro/
 4. Open `index.html` in the editor
 5. Click **"Go Live"** in the bottom-right status bar
    - OR right-click `index.html` → **"Open with Live Server"**
-6. Browser opens at `http://127.0.0.1:5500`  ✅
+6. Browser opens at `http://127.0.0.1:5500`  
 
 > **Why Live Server?** Opening index.html directly as a file (`file://`) may
 > block font loading. Live Server serves it properly over http://localhost.
